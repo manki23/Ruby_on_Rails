@@ -2,6 +2,7 @@
 
 Pour utiliser le projet d’un repo rails de qlqn d’autre :
 ``` Ruby
+bundle update --bundler
 bundle install
 rake db:migrate
 ```
