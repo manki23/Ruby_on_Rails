@@ -98,7 +98,9 @@ rake db:migrate
 ```
 ***
 ## Step 5
-5. Rajouter la bibliothèque javascript SlimSelect (http://slimselectjs.com) sur le select pour permettre une meilleure saisie  
+5. Rajouter la bibliothèque javascript SlimSelect (http://slimselectjs.com) sur le select pour permettre une meilleure saisie   
+
+__PROBLEM__ : je n'ai pas trouvé comment inclure proprement le javascript pour Slim Select, donc je l'ai mis en dur dans la view de new.html.erb, c'est à changer car cela crée ponctuellement des erreurs.
 ``` Ruby
 rails generate migration TableContact_Interests
 class TableContact_Interests < ActiveRecord::Migration[6.0]
@@ -131,3 +133,11 @@ class ContactInterest < ActiveRecord::Base
 end
 ```
 ***
+## Step 6
+6. Mettre en place un autocomplete sur le champ select. Donc à chaque fois que je tape une lettre dans le champ select, un call AJAX s'opère et renvoie dans la liste des options du select les choix possibles, comme lorsqu'on tape sur la barre de recherche google  
+
+Est-ce que ```:autocomplete => true``` ajouté au *select_tag* suffit ?
+j'en doute mais je ne trouve pas comment faire autrement avec Ajax.
+***
+## Step 7
+done (avec une page admin en bonus)
