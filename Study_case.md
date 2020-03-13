@@ -144,7 +144,7 @@ done (avec une page admin en bonus)
 
 ## Step 8
 done: j'ai mis du temps à trouver comment mettre le background transparend
-``` Ruby
+``` html
 <div id="tester" style="width:600px;height:250px;"></div>
 <script>
   var data = [{
