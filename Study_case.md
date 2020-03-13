@@ -141,3 +141,42 @@ j'en doute mais je ne trouve pas comment faire autrement avec Ajax.
 ***
 ## Step 7
 done (avec une page admin en bonus)
+
+## Step 8
+done: j'ai mis du temps à trouver comment mettre le background transparend
+``` Ruby
+<div id="tester" style="width:600px;height:250px;"></div>
+<script>
+  var data = [{
+    values: [
+      <% @interests.each do |i| %>
+        <% @nb = 0 %>
+      <% @contact_interests.each do |c_i| %>
+        <% if c_i.interest_id == i.id %>
+        <% @nb += 1 %>
+    <% end %>
+    <% end %>
+      <%= @nb %>, 
+    <% end %>
+    ],
+    labels: [
+      <% @interests.each do |i| %>
+        '<%= i.name %>', 
+    <% end %> 
+    ],
+    type: 'pie'
+
+  }];
+
+  var layout = {
+    height: 500,
+    width: 600,
+    plot_bgcolor: 'rgba(0,0,0,0)',
+    paper_bgcolor: 'rgba(0,0,0,0)'
+  };
+
+  Plotly.newPlot('tester', data, layout);
+</script>
+```
+***
+Parties optionnelles faites.
